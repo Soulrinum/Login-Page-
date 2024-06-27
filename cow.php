@@ -1,8 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "bob";
-$password = "down";
-$dbname = "onlineshop";
+// Connect To DB in PHPMYADMIN. Insert your own information down below// 
+$servername = "";
+$username = "";
+$password = "";
+$dbname = "";
 
 // Create connection
 $dbc = mysqli_connect($servername, $username, $password, $dbname);
