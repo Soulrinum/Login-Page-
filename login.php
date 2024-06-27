@@ -2,11 +2,11 @@
 
     session_start();
 
-    $sqluser = "bob";
-    $sqlpassword = "down";
+    $sqluser = "";
+    $sqlpassword = "";
 
    
-    $sqldatabase = "onlineshop";
+    $sqldatabase = "";
 
 
     $post = $_SERVER['REQUEST_METHOD']=='POST';
@@ -40,7 +40,7 @@
                     $_SESSION["fname"] = $r["first_name"];
                     echo $_SESSION["uname"];
                     echo $_SESSION["pass"];
-                    header("Location:rat.php");
+                    header("");
                     exit;
                 } else $login_err = true;
         }
