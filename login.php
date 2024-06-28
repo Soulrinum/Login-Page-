@@ -29,7 +29,7 @@
                 } catch (PDOException $e) {
                     exit($e->getMessage());
                 }
-                $st = $pdo->prepare('SELECT * FROM list WHERE user_name=?');
+                $st = $pdo->prepare('SELECT * FROM list WHERE');
                 $st->execute(array($_POST['uname']));
                 $r=$st->fetch();
                 if($r != null && $r["password"]==$_POST['pass']) {
@@ -46,65 +46,6 @@
         }
     }
 ?>
-
-<!DOCTYPE HTML>
-<html>
-<head>
-<style type="text/css">
-    body {
-        margin:0px;
-        padding:0px;
-        font-family: sans-serif;
-        font-size:.9em;
-    }
-    div {
-        top:50%;
-        left:50%;
-        transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
-        -moz-transform: translate(-50%,-50%);
-        -webkit-transform: translate(-50%,-50%);
-        position:absolute;
-        width:350px;
-        background:#eee;
-        padding:10px 20px;
-        border-radius: 2px;
-        box-shadow:0px 0px 10px #aaa;
-        box-sizing:border-box;
-    }
-    input {
-        display: inline-block;
-        border: none;
-        width:100%;
-        border-radius:2px;
-        margin:5px 0px;
-        padding:7px;
-        box-sizing: border-box;
-        box-shadow: 0px 0px 2px #ccc;
-    }
-    #submit {
-        border:none;
-        background-color: blue;
-        color:white;
-        font-size:1em;
-        box-shadow: 0px 0px 3px #777;
-        padding:10px 0px;
-    }
-    span {
-        color:red;
-        font-size: 0.75em;
-    }
-    p {
-        text-align: center;
-        font-size: 1.75em;
-    }
-    a {
-        text-decoration: none;
-        color:blue;
-        font-weight: bold;
-    }
-</style>
-</head> 
 <body>
 <div>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
@@ -117,7 +58,7 @@
     ?>
     <br>
     <input type="submit" id="submit" value="Login"><br><br>
-    Don't have an account? <a href="signup.php">Sign Up</a>.<br><br>
+    Don't have an account? <a href="">Sign Up</a>.<br><br>
 </form>
 </div>
 </body>
